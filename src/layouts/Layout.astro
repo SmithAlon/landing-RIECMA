@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import riecmaLogo from '../assets/RIECMA.png';
 
 // Props interface
 interface Props {
@@ -24,9 +25,29 @@ const {
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body class="min-h-screen bg-gray-50">
-    <header class="w-full h-20 bg-white shadow-lg fixed top-0 z-50">
+    <header class="w-full h-20 bg-white fixed top-0 z-50">
       <nav class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
-        <!-- Add your navigation items here -->
+        <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" style="cursor: pointer">
+          <img src={riecmaLogo.src} alt="RIECMA Logo" class="h-12" />
+        </button>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <button onclick="window.scrollTo({ top: document.getElementById('about').offsetTop, behavior: 'smooth' })" class="text-gray-600 hover:text-blue-600 transition-colors font-['Quicksand']">
+            ¿Quiénes Somos?
+		  </button>
+          <button onclick="window.scrollTo({ top: document.getElementById('services').offsetTop, behavior: 'smooth' })" class="text-gray-600 hover:text-blue-600 transition-colors font-['Quicksand']">
+            Servicios
+          </button>
+          <button onclick="window.scrollTo({ top: document.getElementById('why-join').offsetTop, behavior: 'smooth' })" class="text-gray-600 hover:text-blue-600 transition-colors font-['Quicksand']">
+            ¿Por Qué Unirte?
+          </button>
+          <button onclick="window.scrollTo({ top: document.getElementById('requirements').offsetTop, behavior: 'smooth' })" class="text-gray-600 hover:text-blue-600 transition-colors font-['Quicksand']">
+            Requisitos
+          </button>
+          <button onclick="window.scrollTo({ top: document.getElementById('join-form').offsetTop, behavior: 'smooth' })" class="px-4 py-2 bg-[#e65c00] text-white rounded-lg hover:bg-[#cc5200] transition-colors font-['Quicksand']">
+            Únete
+          </button>
+        </div>
       </nav>
     </header>
 

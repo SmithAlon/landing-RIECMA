@@ -1,36 +1,53 @@
 ---
-// Import any necessary images or assets
-import backgroundImage from '../assets/background.svg';
+import backgroundImage from '../assets/heroRiecma.jpeg';
 ---
 
-<section class="w-full h-[700px] bg-gradient-to-r from-green-50 to-blue-50">
-  <div class="max-w-7xl mx-auto px-4 h-full">
-    <div class="grid md:grid-cols-2 gap-8 h-full items-center">
+<section class="relative w-full min-h-[700px] bg-gradient-to-r from-green-50 to-blue-50 overflow-hidden">
+  {/* Background image with overlay */}
+  <button class="absolute inset-0">
+    <img 
+        src={backgroundImage.src} 
+        alt="RIECMA Hero Background" 
+        class="w-full h-full object-cover opacity-20"
+    />
+  </button>
+
+  {/* Content container */}
+  <div class="relative max-w-7xl mx-auto px-4 h-full py-20">
+    <div class="grid md:grid-cols-2 gap-12 h-full items-center">
       
       {/* Left column - Text content */}
-      <div class="flex flex-col space-y-6">
-        <h1 class="text-5xl font-bold text-gray-800 font-['Quicksand']">
+      <div class="flex flex-col space-y-8">
+        <h1 class="text-4xl md:text-4xl lg:text-5xl font-bold text-gray-800 font-['Quicksand'] leading-tight">
           Rescate Independiente y Cuidado del Medio Ambiente
         </h1>
-        <p class="text-xl text-gray-600 font-['Quicksand']">
+        <p class="text-xl md:text-2xl text-gray-600 font-['Quicksand']">
           Unidos por el bienestar animal y la conservación de nuestro entorno
         </p>
-        <div class="flex gap-4">
-          <button class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a 
+            href="#join-form" 
+            class="px-8 py-4 bg-[#660066] text-white rounded-lg hover:bg-[#990099] transition text-center font-['Quicksand'] text-lg"
+          >
             Únete a nosotros
-          </button>
-          <button class="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+          </a>
+          <a 
+            href="#about" 
+            class="px-8 py-4 border-2 border-gray-300 rounded-lg hover:bg-gray-50 transition text-center font-['Quicksand'] text-lg"
+          >
             Conoce más
-          </button>
+          </a>
         </div>
       </div>
 
-      {/* Right column - Hero image */}
-      <div class="hidden md:block">
-        <img 
+      {/* Right column - Featured image */}
+      <div class="hidden md:block relative">
+        <img
+          src={backgroundImage.src} 
           alt="RIECMA Hero Image" 
-          class="w-full h-auto object-cover"
+          class="w-full h-[500px] object-cover rounded-2xl shadow-2xl"
         />
+        <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-50/10 to-blue-50/10"></div>
       </div>
 
     </div>
