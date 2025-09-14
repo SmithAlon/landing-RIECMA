@@ -1,0 +1,59 @@
+---
+interface FormData {
+  nombre: string;
+  email: string;
+  mensaje: string;
+}
+
+// Form handling function
+const handleSubmit = (e: SubmitEvent) => {
+  e.preventDefault();
+  // Form submission logic here
+};
+---
+
+<section class="w-full bg-gradient-to-r from-fuchsia-700 to-blue-500 py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-normal text-white font-['Quicksand'] mb-4">
+        Únete a Nuestro Equipo
+      </h2>
+      <p class="text-xl text-white/90 font-['Quicksand'] max-w-2xl mx-auto">
+        Forma parte de nuestra comunidad de rescatistas y contribuye al bienestar animal
+      </p>
+    </div>
+
+    <form 
+      class="max-w-2xl mx-auto bg-white rounded-lg shadow-xl p-8"
+      method="POST"
+    >
+      <!-- Rest of the form remains the same -->
+    </form>
+  </div>
+</section>
+
+<script>
+  // Client-side form handling
+  const form = document.querySelector('form');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target as HTMLFormElement);
+    try {
+      const response = await fetch('/api/join', {
+        method: 'POST',
+        body: formData,
+      });
+      
+      if (response.ok) {
+        // Handle success
+        console.log('Form submitted successfully');
+      } else {
+        // Handle error
+        console.error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
+  });
+</script>

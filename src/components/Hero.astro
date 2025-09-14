@@ -1,0 +1,38 @@
+---
+// Import any necessary images or assets
+import backgroundImage from '../assets/background.svg';
+---
+
+<section class="w-full h-[700px] bg-gradient-to-r from-green-50 to-blue-50">
+  <div class="max-w-7xl mx-auto px-4 h-full">
+    <div class="grid md:grid-cols-2 gap-8 h-full items-center">
+      
+      {/* Left column - Text content */}
+      <div class="flex flex-col space-y-6">
+        <h1 class="text-5xl font-bold text-gray-800 font-['Quicksand']">
+          Rescate Independiente y Cuidado del Medio Ambiente
+        </h1>
+        <p class="text-xl text-gray-600 font-['Quicksand']">
+          Unidos por el bienestar animal y la conservación de nuestro entorno
+        </p>
+        <div class="flex gap-4">
+          <button class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            Únete a nosotros
+          </button>
+          <button class="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+            Conoce más
+          </button>
+        </div>
+      </div>
+
+      {/* Right column - Hero image */}
+      <div class="hidden md:block">
+        <img 
+          alt="RIECMA Hero Image" 
+          class="w-full h-auto object-cover"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>

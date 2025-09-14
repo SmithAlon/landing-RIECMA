@@ -1,0 +1,61 @@
+---
+interface Reason {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const reasons: Reason[] = [
+  {
+    title: "Impacto Real",
+    description: "Contribuye directamente al bienestar de animales necesitados y al medio ambiente",
+    icon: "🌟"
+  },
+  {
+    title: "Comunidad",
+    description: "Únete a un equipo apasionado y comprometido con la misma causa",
+    icon: "👥"
+  },
+  {
+    title: "Desarrollo Personal",
+    description: "Aprende nuevas habilidades y crece profesionalmente en el campo del rescate animal",
+    icon: "📈"
+  },
+  {
+    title: "Reconocimiento",
+    description: "Tu labor será valorada y reconocida por la comunidad",
+    icon: "🏆"
+  }
+];
+---
+
+<section class="w-full bg-gray-50 py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-normal font-['Quicksand'] text-gray-800 mb-4">
+        ¿Por Qué Unirte?
+      </h2>
+      <p class="text-xl text-gray-600 font-['Quicksand'] max-w-3xl mx-auto">
+        Ser parte de RIECMA te brinda la oportunidad de hacer una diferencia real en tu comunidad
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {reasons.map((reason) => (
+        <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-start">
+            <div class="text-4xl mr-4">{reason.icon}</div>
+            <div>
+              <h3 class="text-xl font-semibold font-['Quicksand'] text-gray-800 mb-2">
+                {reason.title}
+              </h3>
+              <p class="text-gray-600">
+                {reason.description}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
