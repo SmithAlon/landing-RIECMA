@@ -1,30 +1,38 @@
 ---
-// Aquí irían los imports y props si son necesarios
+import about1 from '../assets/About1.jpeg';
+import about2 from '../assets/About2.jpeg';
+import about3 from '../assets/About3.jpeg';
 ---
 
-<section id="about" class="w-full bg-white py-20">
+<section id="about" class="w-full bg-gradient-to-r from-[#39b620] to-[#047c1e] py-20">
   <div class="max-w-7xl mx-auto px-4">
     <div class="text-center mb-16">
-      <h2 class="text-4xl font-normal font-['Quicksand'] text-gray-800 mb-4">
+      <h2 class="text-4xl font-normal font-['Quicksand'] text-white mb-4">
         ¿Quiénes Somos?
       </h2>
-      <p class="text-xl text-gray-600 font-['Quicksand'] max-w-3xl mx-auto">
+      <p class="text-xl text-gray-100 font-['Quicksand'] max-w-3xl mx-auto">
         Somos un equipo de rescatistas independientes dedicados al bienestar animal y la protección del medio ambiente
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-green-50 rounded-2xl p-6 h-64">
-        {/* Contenido del primer card */}
-      </div>
-      
-      <div class="bg-blue-50 rounded-2xl p-6 h-64">
-        {/* Contenido del segundo card */}
-      </div>
-      
-      <div class="bg-orange-50 rounded-2xl p-6 h-64">
-        {/* Contenido del tercer card */}
-      </div>
+      <img 
+        src={about1.src} 
+        alt="About1" 
+        class="w-full h-80 object-cover rounded-2xl p-1 bg-green-50"
+      />
+
+      <img 
+        src={about2.src} 
+        alt="About2" 
+        class="w-full h-80 object-cover rounded-2xl p-1 bg-blue-50"
+      />
+
+      <img 
+        src={about3.src} 
+        alt="About3" 
+        class="w-full h-80 object-cover rounded-2xl p-1 bg-orange-50"
+      />
     </div>
   </div>
 </section>
