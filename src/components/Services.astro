@@ -1,42 +1,52 @@
 ---
+import services1 from '../assets/Servicios1.png';
+import services2 from '../assets/Servicios2.jpeg';
+import services3 from '../assets/Servicios3.png';
+import services4 from '../assets/Servicios4.jpeg';
+
 interface Service {
   title: string;
   description: string;
   icon: string;
   color: string;
+  img: string;
 }
 
 const services: Service[] = [
   {
-    title: "Rescate Animal",
-    description: "Atención inmediata a animales en situación de riesgo o abandono",
+    title: "Brigadas de Esterilización",
+    description: "Brigadas gratuitas masivas de esterilización en colonias de alta proliferación de animales en situación de calle.",
     icon: "🚑",
-    color: "bg-blue-50"
+    color: "bg-blue-50/50",
+    img: services1.src
   },
   {
-    title: "Rehabilitación",
+    title: "Eventos de concientización",
     description: "Cuidados médicos y recuperación de animales rescatados",
     icon: "🏥",
-    color: "bg-green-50"
+    color: "bg-green-50/30",
+    img: services2.src
   },
   {
     title: "Adopción",
     description: "Programa de adopción responsable y seguimiento post-adopción",
     icon: "🏠",
-    color: "bg-yellow-50"
+    color: "bg-yellow-50/30",
+    img: services4.src
   },
   {
     title: "Educación Ambiental",
     description: "Concientización sobre el cuidado animal y medio ambiente",
     icon: "📚",
-    color: "bg-purple-50"
+    color: "bg-purple-50/30",
+    img: services3.src
   }
 ];
 ---
 
 <section id="services" class="w-full bg-white py-20">
   <div class="max-w-7xl mx-auto px-4">
-    <div class="text-center mb-16">
+    <div class="text-center mb-8">
       <h2 class="text-4xl font-normal font-['Quicksand'] text-gray-800 mb-4">
         Nuestros Servicios
       </h2>
@@ -47,14 +57,19 @@ const services: Service[] = [
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {services.map((service) => (
-        <div class={`${service.color} p-8 rounded-xl transition-transform hover:scale-105`}>
-          <div class="text-4xl mb-4">{service.icon}</div>
-          <h3 class="text-xl font-semibold font-['Quicksand'] text-gray-800 mb-3">
-            {service.title}
-          </h3>
-          <p class="text-gray-600">
-            {service.description}
-          </p>
+        <div 
+          class="relative h-80 rounded-xl overflow-hidden transition-transform hover:scale-105"
+          style={`background-image: url(${service.img}); background-size: cover; background-position: center;`}
+        >
+          <div class={`absolute inset-0 bg-opacity-90 p-8 flex flex-col justify-start`}>
+            <div class="text-4xl mb-4">{service.icon}</div>
+            <h3 class="text-xl font-semibold font-['Quicksand'] text-white mb-3">
+              <span class="bg-[#660066]/80">{service.title}</span>
+            </h3>
+            <p class="text-white">
+              <span class="bg-gray-400/70">{service.description}</span>
+            </p>
+          </div>
         </div>
       ))}
     </div>

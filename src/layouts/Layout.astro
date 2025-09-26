@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import riecmaLogo from '../assets/RIECMA.png';
+import dog from '../assets/dog.png';
 
 // Props interface
 interface Props {
@@ -23,7 +24,7 @@ const {
     <meta name="description" content={description} />
     <title>{title}</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-	<link rel="icon" type="image/png" href="./dog.png" />
+	<link rel="icon" type="image/png" href={dog.src} />
   </head>
   <body class="min-h-screen bg-gray-50">
     <header class="w-full h-20 bg-white fixed top-0 z-50 border-b-1 border-b-[#7c7c7c]">
